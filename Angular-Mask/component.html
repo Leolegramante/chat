@@ -1,0 +1,50 @@
+<div>
+  <h2>Formulário de Dados de Teste</h2>
+  <form (ngSubmit)="onSubmit()">
+    <div class="form-group">
+      <label for="voltage">Tensão:</label>
+      <input type="number" id="voltage" name="voltage" [(ngModel)]="testData.voltage" required>
+    </div>
+
+    <div class="form-group">
+      <label for="temperature">Temperatura:</label>
+      <input type="number" id="temperature" name="temperature" [(ngModel)]="testData.temperature" required
+        (change)="calculateMultiplication()">
+    </div>
+
+    <div class="form-group">
+      <label for="testTime">Tempo de Teste:</label>
+      <input type="number" id="testTime" name="testTime" [(ngModel)]="testData.testTime" required
+        (change)="calculateMultiplication()">
+    </div>
+
+    <!-- Campo de multiplicação -->
+    <div class="form-group">
+      <label for="temperatureTimeMultiplication">Temp. x Tempo:</label>
+      <input type="number" id="temperatureTimeMultiplication" name="temperatureTimeMultiplication"
+        [(ngModel)]="temperatureTimeMultiplication" disabled>
+    </div>
+
+    <div class="form-group">
+      <label for="size">Tamanho:</label>
+      <input type="number" id="size" name="size" [(ngModel)]="testData.size" required>
+    </div>
+
+    <div class="form-group">
+      <label for="hardness">Dureza:</label>
+      <input type="number" id="hardness" name="hardness" [(ngModel)]="testData.hardness" required>
+    </div>
+
+    <div class="form-group">
+      <label for="finalScale">Escala Final:</label>
+      <input type="text" id="finalScale" name="finalScale" [(ngModel)]="testData.finalScale" required>
+    </div>
+
+    <div class="form-group">
+      <label for="coldSize">Tamanho Frio:</label>
+      <input type="number" id="coldSize" name="coldSize" [(ngModel)]="testData.coldSize" required>
+    </div>
+
+    <button type="submit">Salvar</button>
+  </form>
+</div>
